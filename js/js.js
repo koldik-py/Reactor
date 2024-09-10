@@ -693,7 +693,8 @@ const translateR = () => {
     }
 
     const goStart = () => {
-        const urlLanguageCode = getLanguageFromURL();
+        // const urlLanguageCode = getLanguageFromURL();
+        // На гитхабе не работает
 
 
         const localStorageLanguageCode = localStorage.lang || '';
@@ -701,8 +702,6 @@ const translateR = () => {
         const languageCode = urlLanguageCode ? urlLanguageCode : 
         localStorageLanguageCode ? localStorageLanguageCode : 'ru'
 
-        console.log(urlLanguageCode)
-        console.log(languageCode)
 
         localStorage.lang = languageCode;
 
