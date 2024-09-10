@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteRule ^ru(.*)$ $1 [L]
+RewriteRule ^en(.*)$ $1 [L]
+RewriteRule ^es(.*)$ $1 [L]

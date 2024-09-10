@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="ru-en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>React Group</title>
+      <link rel="stylesheet" href="css/font.css?v=1.1">
+      <link rel="stylesheet" href="css/normalize.css?v=1.1">
+      <link rel="stylesheet" defer href="css/style.css?v=1.6">
+      <link rel="icon" type="image/x-icon" href="img/favicon.png">
+      
+   </head>
+   <body>
+      <div class="popup-wrapper">
+         <div id="popup">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none" id="close">
+               <path
+                  d="M8.40994 7.00019L12.7099 2.71019C12.8982 2.52188 13.004 2.26649 13.004 2.00019C13.004 1.73388 12.8982 1.47849 12.7099 1.29019C12.5216 1.10188 12.2662 0.996094 11.9999 0.996094C11.7336 0.996094 11.4782 1.10188 11.2899 1.29019L6.99994 5.59019L2.70994 1.29019C2.52164 1.10188 2.26624 0.996094 1.99994 0.996094C1.73364 0.996094 1.47824 1.10188 1.28994 1.29019C1.10164 1.47849 0.995847 1.73388 0.995847 2.00019C0.995847 2.26649 1.10164 2.52188 1.28994 2.71019L5.58994 7.00019L1.28994 11.2902C1.19621 11.3831 1.12182 11.4937 1.07105 11.6156C1.02028 11.7375 0.994141 11.8682 0.994141 12.0002C0.994141 12.1322 1.02028 12.2629 1.07105 12.3848C1.12182 12.5066 1.19621 12.6172 1.28994 12.7102C1.3829 12.8039 1.4935 12.8783 1.61536 12.9291C1.73722 12.9798 1.86793 13.006 1.99994 13.006C2.13195 13.006 2.26266 12.9798 2.38452 12.9291C2.50638 12.8783 2.61698 12.8039 2.70994 12.7102L6.99994 8.41019L11.2899 12.7102C11.3829 12.8039 11.4935 12.8783 11.6154 12.9291C11.7372 12.9798 11.8679 13.006 11.9999 13.006C12.132 13.006 12.2627 12.9798 12.3845 12.9291C12.5064 12.8783 12.617 12.8039 12.7099 12.7102C12.8037 12.6172 12.8781 12.5066 12.9288 12.3848C12.9796 12.2629 13.0057 12.1322 13.0057 12.0002C13.0057 11.8682 12.9796 11.7375 12.9288 11.6156C12.8781 11.4937 12.8037 11.3831 12.7099 11.2902L8.40994 7.00019Z"
+                  fill="#fff" />
+            </svg>
+            <h3 class="popup-title" translate="form-title">Оставьте заявку</h3>
+            <p class="popup-p ru" translate="form-subtitle">Мы свяжемся с вами в ближайшее время</p>
+            <input type="text" name="name" placeholder="Имя" translate="name"> 
+            <input type="email" name="email" placeholder="E-mail" translate="email">
+            <input type="tel" name="phone" placeholder="+7 (999) 999-99-99">
+            <label for="telegram" translate="form-tg">Телеграм</label>
+            <input type="text" name="telegram" placeholder="@reactgroup">
+            <button type="submit" name="submit" value="Отправить" translate="submit">Отправить</button>
+            <p class="condition" translate="form-last">Нажимая на кнопку, вы даете согласие на обработку
+               персональных данных и соглашаетесь <a href="/privacy.html" target="_blank">c политикой
+               конфиденциальности</a>
+            </p>
+         </div>
+      </div>
+      <div class="menu-wrapper" style="display: none;">
+         <div class="menu">
+            <div class="lang-mob">
+               <div class="lang__actual">
+                  <div class="lang-flag">
+                     <img src="img/ru.png" alt="" user-lang="ru">
+                  </div>
+                  <div class="lang__text ru">Русский</div>
+                  <div class="lang-arrow">
+                     <div class="lang-vector"></div>
+                  </div>
+               </div>   
+               <div class="lang__list-mob">
+                  
+                  <div class="lang__li">
+                     <div class="lang-flag">
+                        <img src="img/gb.png" alt="" user-lang="en">
+                     </div>
+                     <div class="lang__text ru">English</div>
+                  </div>
+
+                  <div class="lang__li">
+                     <div class="lang-flag">
+                        <img src="img/es.png" alt="" user-lang="es">
+                     </div>
+                     <div class="lang__text ru">Español</div>
+                  </div>
+               </div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none" id="close-menu">
+               <path
+                  d="M8.40994 7.00019L12.7099 2.71019C12.8982 2.52188 13.004 2.26649 13.004 2.00019C13.004 1.73388 12.8982 1.47849 12.7099 1.29019C12.5216 1.10188 12.2662 0.996094 11.9999 0.996094C11.7336 0.996094 11.4782 1.10188 11.2899 1.29019L6.99994 5.59019L2.70994 1.29019C2.52164 1.10188 2.26624 0.996094 1.99994 0.996094C1.73364 0.996094 1.47824 1.10188 1.28994 1.29019C1.10164 1.47849 0.995847 1.73388 0.995847 2.00019C0.995847 2.26649 1.10164 2.52188 1.28994 2.71019L5.58994 7.00019L1.28994 11.2902C1.19621 11.3831 1.12182 11.4937 1.07105 11.6156C1.02028 11.7375 0.994141 11.8682 0.994141 12.0002C0.994141 12.1322 1.02028 12.2629 1.07105 12.3848C1.12182 12.5066 1.19621 12.6172 1.28994 12.7102C1.3829 12.8039 1.4935 12.8783 1.61536 12.9291C1.73722 12.9798 1.86793 13.006 1.99994 13.006C2.13195 13.006 2.26266 12.9798 2.38452 12.9291C2.50638 12.8783 2.61698 12.8039 2.70994 12.7102L6.99994 8.41019L11.2899 12.7102C11.3829 12.8039 11.4935 12.8783 11.6154 12.9291C11.7372 12.9798 11.8679 13.006 11.9999 13.006C12.132 13.006 12.2627 12.9798 12.3845 12.9291C12.5064 12.8783 12.617 12.8039 12.7099 12.7102C12.8037 12.6172 12.8781 12.5066 12.9288 12.3848C12.9796 12.2629 13.0057 12.1322 13.0057 12.0002C13.0057 11.8682 12.9796 11.7375 12.9288 11.6156C12.8781 11.4937 12.8037 11.3831 12.7099 11.2902L8.40994 7.00019Z"
+                  fill="#fff" />
+            </svg>
+            <div class="foo__left">
+               <a href="#" class="foo__logo en">React Group</a>
+               <button class="btn ru foo__btn" translate="btn">Связаться с нами</button>
+            </div>
+            <div class="foo__right">
+               <div class="foo__one">
+                  <a href="#promo" class="ru foo__link" translate="promo">О Компании</a>
+                  <a href="#four" class="ru foo__link" translate="four">Направления</a>
+                  <a href="#five" class="ru foo__link" translate="five">Как работаем</a>
+                  <a href="#six" class="ru foo__link" translate="six">Вакансии</a>
+               </div>
+               <div class="foo__two">
+                  <h4 class="ru foo__subtitle" translate="foo-2">Контакты</h4>
+                  <a href="tel:+79362619099" class="ru foo__link foo__phone">+7 (936) 261-90-99</a>
+                  <a href="mailto:info@reactgroup.com" class="ru foo__link foo__mail">info@reactgroup.com</a>
+                  <div class="foo__icons">
+                     <a href="https://t.me/Reactgroup_ru" class="foo__icon" target="_blank"><img loading="lazy" src="img/foo1.svg" alt=""></a>
+                     <a href="https://wa.me/79362619099" class="foo__icon" target="_blank"><img loading="lazy" src="img/foo2.svg" alt=""></a>
+                  </div>
+                  <button class="btn ru foo__btn" translate="btn">Связаться с нами</button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="wrapper--head">
+         <header class="header">
+            <div class="container">
+               <nav class="head">
+                  <a href="" class="en logo">React Group</a>
+                  <ul class="head__ul">
+                     <li class="head__li ru"><a href="#promo" translate="promo">О Компании</a></li>
+                     <li class="head__li ru"><a href="#four" translate="four">Направления</a></li>
+                     <li class="head__li ru"><a href="#five" translate="five">Как работаем</a></li>
+                     <li class="head__li ru"><a href="#six" translate="six">Вакансии</a></li>
+                  </ul>
+                  <div class="head__right">
+                     <div class="lang">
+
+                        <div class="lang__actual">
+                           <div class="lang-flag">
+                              <img src="img/ru.png" alt="" user-lang="ru">
+                           </div>
+                           <div class="lang-arrow">
+                              <div class="lang-vector"></div>
+                           </div>
+                           <input type="hidden" id="lang" value="">
+                        </div>   
+                        <div class="lang__list">
+                           <div class="lang__li">
+                              <div class="lang-flag">
+                                 <img src="img/ru.png" alt="" user-lang="ru">
+                              </div>
+                              <div class="lang__text ru">Русский</div>
+                           </div>
+                           <div class="lang__li">
+                              <div class="lang-flag">
+                                 <img src="img/gb.png" alt="" user-lang="en">
+                              </div>
+                              <div class="lang__text ru">English</div>
+                           </div>
+                           <div class="lang__li">
+                              <div class="lang-flag">
+                                 <img src="img/es.png" alt="" user-lang="es">
+                              </div>
+                              <div class="lang__text ru">Español</div>
+                           </div>
+                        </div>
+                     </div>
+                     <button class="btn head__btn ru" translate="btn">Связаться с нами</button>
+                  </div>
+                  <button class=" head__burger ru"><img src="img/burger.svg" alt=""></button>
+               </nav>
+               <div class="header__img">
+                  <div class="header__main">
+                     <h1 class="header__title title en" translate="head-title">React Group</h1>
+                     <h2 class="header__subtitle subtitle ru" translate="head-subtitle">Осуществляем глобальные интернет-продажи товаров различных категорий через интернет в странах Европы, Латинской Америки и Африки.</h2>
+                     <button class="btn header__btn ru" translate="btn-head">Обсудить сотрудничество</button>
+                  </div>
+                  <div class="animation">
+                     <div class="back">
+                        <picture>
+                         <source type="image/webp" srcset="img/map.webp">
+                         <source type="image/png" srcset="img/map.png">
+                         <img  src="img/map.png" alt="Карта мира">
+                        </picture>
+                     </div>
+                     <div class="single">
+                        <div class="single__block s-1">
+                           <img src="img/single.svg" alt="" class="single__img">
+                           <span class="single__name ru" translate="geo-1">ЮАР</span>
+                        </div>
+                        <div class="single__block s-1-1">
+                           <img src="img/single.svg" alt="" class="single__img">
+                           <span class="single__name ru" translate="geo-2">Кения</span>
+                        </div>
+                        <div class="single__block s-1-2">
+                           <img src="img/single.svg" alt="" class="single__img">
+                           <span class="single__name ru"  translate="geo-3">Руанда</span>
+                        </div>
+                        <div class="single__block s-1-3">
+                           <img src="img/single.svg" alt="" class="single__img">
+                           <span class="single__name ru" translate="geo-4">Уганда</span>
+                        </div>
+                        <div class="single__block s-1-4">
+                           <img src="img/single.svg" alt="" class="single__img">
+                           <span class="single__name ru" translate="geo-5">Танзания</span>
+                        </div>
+                        <div class="single__block s-1-5">
+                           <img src="img/single.svg" alt="" class="single__img">
+                           <span class="single__name ru" translate="geo-6">Сенегал</span>
+                        </div>
+                        <div class="single__block s-1-6">
+                           <img src="img/single.svg" alt="" class="single__img">
+                           <span class="single__name ru" translate="geo-7">Кот-д'Ивуар</span>
+                        </div>
+                        <div class="single__block s-1-7">
+                           <img src="img/single.svg" alt="" class="single__img">
+                           <span class="single__name ru" translate="geo-8">Гана</span>
+                        </div>
+                        <div class="single__block s-2">
+                           <img src="img/single.svg" alt="" class="single__img">
+                           <span class="single__name ru" translate="geo-9">Польша</span>
+                        </div>
+                        <div class="single__block s-3">
+                           <img src="img/single.svg" alt="" class="single__img">
+                           <span class="single__name ru" translate="geo-10">Германия</span>
+                        </div>
+                        <div class="single__block s-4">
+                           <img src="img/single.svg" alt="" class="single__img">
+                           <span class="single__name ru" translate="geo-11">Бельгия</span>
+                        </div>
+                        <div class="single__block s-5">
+                           <img src="img/single.svg" alt="" class="single__img">
+                           <span class="single__name ru" translate="geo-12">Венгрия</span>
+                        </div>
+                        <div class="single__block s-5-1">
+                           <img src="img/single.svg" alt="" class="single__img">
+                           <span class="single__name ru" translate="geo-13">Хорватия</span>
+                        </div>
+                        <div class="single__block s-5-2">
+                           <img src="img/single.svg" alt="" class="single__img">
+                           <span class="single__name ru" translate="geo-14">Болгария</span>
+                        </div>
+                        <div class="single__block s-5-3">
+                           <img src="img/single.svg" alt="" class="single__img">
+                           <span class="single__name ru" translate="geo-15">Италия</span>
+                        </div>
+                        <div class="single__block s-5-4">
+                           <img src="img/single.svg" alt="" class="single__img">
+                           <span class="single__name ru" translate="geo-16">Испания</span>
+                        </div>
+                        <div class="single__block s-6-0">
+                           <img src="img/single.svg" alt="" class="single__img">
+                           <span class="single__name ru" translate="geo-17">США</span>
+                        </div>
+                        <div class="single__block s-6">
+                           <img src="img/single.svg" alt="" class="single__img">
+                           <span class="single__name ru" translate="geo-18">Мексика</span>
+                        </div>
+                        <div class="single__block s-7">
+                           <img src="img/single.svg" alt="" class="single__img">
+                           <span class="single__name ru" translate="geo-19">Гватемала</span>
+                        </div>
+                        <div class="single__block s-8">
+                           <img src="img/single.svg" alt="" class="single__img">
+                           <span class="single__name ru"  translate="geo-20">Гондурас</span>
+                        </div>
+                        <div class="single__block s-9">
+                           <img src="img/single.svg" alt="" class="single__img">
+                           <span class="single__name ru" translate="geo-21">Сальвадор</span>
+                        </div>
+                        <div class="single__block s-10">
+                           <img src="img/single.svg" alt="" class="single__img">
+                           <span class="single__name ru" translate="geo-22">Коста-Рика</span>
+                        </div>
+                        <div class="single__block s-11">
+                           <img src="img/single.svg" alt="" class="single__img">
+                           <span class="single__name ru" translate="geo-23">Панама</span>
+                        </div>
+                        <div class="single__block s-12">
+                           <img src="img/single.svg" alt="" class="single__img">
+                           <span class="single__name ru" translate="geo-24">Колумбия</span>
+                        </div>
+                        <div class="single__block s-13">
+                           <img src="img/single.svg" alt="" class="single__img">
+                           <span class="single__name ru" translate="geo-25">Эквадор</span>
+                        </div>
+                        <div class="single__block s-14">
+                           <img src="img/single.svg" alt="" class="single__img">
+                           <span class="single__name ru" translate="geo-26">Перу</span>
+                        </div>
+                        <div class="single__block s-15">
+                           <img src="img/single.svg" alt="" class="single__img">
+                           <span class="single__name ru" translate="geo-27">Боливия</span>
+                        </div>
+                        <div class="single__block s-16">
+                           <img src="img/single.svg" alt="" class="single__img">
+                           <span class="single__name ru" translate="geo-28">Чили</span>
+                        </div>
+                        <div class="single__block s-17">
+                           <img src="img/single.svg" alt="" class="single__img">
+                           <span class="single__name ru" translate="geo-29">Китай</span>
+                        </div>
+                        <div class="single__block s-18">
+                           <img src="img/single.svg" alt="" class="single__img">
+                           <span class="single__name ru" translate="geo-30">Сингапур</span>
+                        </div>
+                     </div>
+                     <div class="circle">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                           viewBox="0 0 1212 434" style="enable-background:new 0 0 1212 434;" xml:space="preserve">
+                           <style type="text/css">
+                              .st0{fill:none;}
+                              .st1{fill:none;stroke:#48709A;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:12,8;}
+                           </style>
+                           <path id="path" class="st0" d="M35.7,270.1c-14-18.7-21.4-38.2-21.4-58.3C14.3,92.3,279.5,0.3,606.4,0.3s592.1,101.8,592.1,221.3
+                              S933.4,433.1,606.4,433.1C334.3,433.1,105,362.6,35.7,270.1"/>
+                           <ellipse transform="matrix(7.324147e-03 -1 1 7.324147e-03 385.113 821.645)" class="st1" cx="606.4" cy="216.9" rx="215.5" ry="592.1" />
+                        </svg>
+                     </div>
+                     <div class="air">
+                        <img src="img/air.png" alt="">
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </header>
+         <section class="section promo" id="promo">
+            <div class="container">
+               <div class="promo__main">
+                  <div class="video__popup">
+                     <div class="video__controls">
+                        <div class="video__exit">
+                           <img loading="lazy" src="video/exit.svg" alt="">
+                        </div>
+                     </div>
+                     <iframe title="vimeo-player" src="https://player.vimeo.com/video/859012599?h=042232a781&title=0&byline=0&portrait=0&sidedock=0&muted=1&loop=1" width="100%" height="100%" frameborder="0"    frameborder="0"  id="test" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen"></iframe>
+                  </div>
+                  <div class="promo__top">
+                     <div class="promo__content">
+                        <p class="promo__start ru" translate="promo-subtitle">о компании</p>
+                        <h2 class="promo__title ru" translate="promo-title"><span class="promo__logo en" >React Group</span>  — команда специалистов с опытом более 9 лет в интернет-продажах и логистике</h2>
+                     </div>
+                     <div class="promo__numbers animation1">
+                        <div class="promo__block-num">
+                           <p class="promo__num-top ru">
+                              <span class="promo__num--number animation1__num--1">0</span><span class="promo__num--description">+</span>
+                           </p>
+                           <p class="promo__num-bottom ru" translate="promo-one">лет на рынке</p>
+                        </div>
+                        <div class="promo__block-num">
+                           <p class="promo__num-top ru">
+                              <span class="promo__num--number animation1__num--2">0</span>
+                           </p>
+                           <p class="promo__num-bottom ru" translate="promo-two">офисов по всему миру</p>
+                        </div>
+                        <div class="promo__block-num">
+                           <p class="promo__num-top ru">
+                              <span class="promo__num--number animation1__num--3">0</span>
+                           </p>
+                           <p class="promo__num-bottom ru" translate="promo-three">сотрудников в штате</p>
+                        </div>
+                        <div class="promo__block-num">
+                           <div class="promo__num-top ru">
+                              <span class="promo__num--number animation1__num--4">0</span>
+                              <span class="promo__num--description promo__num--description--4">+</span>
+                           </div>
+                           <p class="promo__num-bottom ru" translate="promo-four">продаж в год</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="promo__bottom">
+                     <div class="promo__video">
+                        <iframe title="vimeo-player" src="https://player.vimeo.com/video/852958835?background=1" width="100%" height="100%" frameborder="0"  id="test2"  frameborder="0"  id="test" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen"></iframe>
+                        <picture>
+                         <source type="image/webp" srcset="img/poster1.webp">
+                         <source type="image/png" srcset="img/poster1.png">
+                         <img loading="lazy" src="img/poster1.png" alt="Промо видео, заставка" loading="lazy">
+                        </picture>
+                     </div>
+                     <button class="btn promo__btn ru video__btn" translate="btn-video">Cмотреть видео полностью</button>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </div>
+      <div class="wrapper">
+         <section class="section three">
+            <div class="container">
+               <h2 class="ru title three__title" translate="three-title">Осуществляем продажи <br> в <span class="three--extra">26 странах</span> на <span class="three--extra">3 континентах</span></h2>
+            </div>
+            <div class="three__block animation2">
+               <div class="three__line three__line--1">
+                  <div class="three__animation ru">
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/de.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-1">Германия</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/ng.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-2">Нигерия</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/co.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-3">Колумбия</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/it.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-4">Италия</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/tz.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-5">Танзания</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/pe.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-6">Перу</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/es.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-7">Испания</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/ci.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-8">Кот-д'Ивуар</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/cl.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-9">Чили</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/de.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-10">Германия</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/ng.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-11">Нигерия</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/co.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-12">Колумбия</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/it.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-13">Италия</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/tz.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-14">Танзания</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/pe.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-15">Перу</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/es.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-16">Испания</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/ci.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-17">Кот-д'Ивуар</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/cl.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-18">Чили</span>
+                     </div>
+                  </div>
+               </div>
+               <div class="three__line three__line--2">
+                  <div class="three__animation ru">
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/mx.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-19">Мексика</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/me.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-20">Черногория</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/gh.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-21">Гана</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/cr.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-22">Коста Рика</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/pl.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-23">Польша</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/ug.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-24">Уганда</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/pa.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-25">Панама</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/bg.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-26">Болгария</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/bo.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-27">Боливия</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/mx.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-28">Мексика</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/me.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-29">Черногория</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/gh.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-30">Гана</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/cr.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-31">Коста Рика</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/pl.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-32">Польша</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/ug.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-33">Уганда</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/pa.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-34">Панама</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/bg.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-35">Болгария</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/bo.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-36">Боливия</span>
+                     </div>
+                  </div>
+               </div>
+               <div class="three__line three__line--3">
+                  <div class="three__animation ru">
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/ke.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-37">Кения</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/hn.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-38">Гондурас</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/hr.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-39">Хорватия</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/rw.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-40">Руанда</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/gt.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-41">Гватемала</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/ro.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-42">Румыния</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/sv.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-43">Сальвадор</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/ec.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-44">Эквадор</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/cz.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-45">Чехия</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/ke.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-46">Кения</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/hn.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-47">Гондурас</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/hr.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-48">Хорватия</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/rw.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-49">Руанда</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/gt.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-50">Гватемала</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/ro.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-51">Румыния</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/sv.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-52">Сальвадор</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/ec.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-53">Эквадор</span>
+                     </div>
+                     <div class="three__item">
+                        <span class="three__flag" style="background-image: url('img/cz.jpg')">
+                        </span>
+                        <span class="three__text" translate="flag-54">Чехия</span>
+                     </div>
+                  </div>
+               </div>
+               <div class="three__line three__line--4">
+                  <div class="three__animation ru">
+                     <div class="three__item three__item--1">Нигерия</div>
+                     <div class="three__item three__item--3">Германия</div>
+                     <div class="three__item three__item--3">Коста Рика</div>
+                     <div class="three__item three__item--3">Италия</div>
+                     <div class="three__item three__item--1">Кот-д'Ивуар</div>
+                     <div class="three__item three__item--3">Испания</div>
+                     <div class="three__item three__item--1">Румыния</div>
+                     <div class="three__item three__item--1">Танзания</div>
+                     <div class="three__item three__item--2">Перу</div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="section four" id="four">
+            <div class="container">
+               <div class="four__main">
+                  <h2 class="four__title ru" translate="four">Направления</h2>
+                  <div class="four__flex">
+                     <div class="four__card four__card-0" data-value="e-commerce">
+                        <div class="four__exit four__exit--mob">
+                           <img loading="lazy" src="img/exit.png" alt="">
+                        </div>
+                        <div class="four__top">
+                           <div class="four__circle"><img loading="lazy" src="img/icon1.svg" alt="" class="four__img"></div>
+                        </div>
+                        <div class="four__content">
+                           <h3 class="four__subtitle ru" translate="four-title-1">Е-коммерция</h3>
+                           <p class="four__description ru" translate="four-subtitle-1">Осуществляем продажи собственных товаров через
+                              интернет-магазины
+                           </p>
+                           <div class="four__info--mob">
+                              <p class="four__description four__desctiption--mob ru" translate="four-description-1">Мы осуществляем онлайн-торговлю физическими товарами на трех континентах. Владеем собственной инфраструктурой для производства товаров, курьерской доставки и Контакт-центров. Партнерская программа* позволяет эффективно привлекать трафик и генерировать тысячи интернет-заявок ежедневно. Наша *Партнерская Программа – это специально разработанное программное обеспечение, предоставляющее сервис для сотрудничества с партнерами, цель которого состоит в бизнес-продвижении и генерации лидов. Наша сеть насчитывает более 17000 активных партнеров по всему миру, которые получают вознаграждение за каждого привлеченного в интернете покупателя.</p>
+                           </div>
+                        </div>
+                        <div class="full-info full-info--hidden" translate="none">Подробнее</div>
+                        <div class="full-info full-info--visible" translate="four-next">Подробнее</div>
+                     </div>
+                     <div class="four__card four__card-1" data-value="courier">
+                        <div class="four__exit four__exit--mob">
+                           <img loading="lazy" src="img/exit.png" alt="">
+                        </div>
+                        <div class="four__top">
+                           <div class="four__circle"><img loading="lazy" src="img/icon2.svg" alt="" class="four__img"></div>
+                        </div>
+                        <div class="four__content">
+                           <h3 class="four__subtitle ru" translate="four-title-2">Курьерская служба</h3>
+                           <p class="four__description ru" translate="four-subtitle-2">Обеспечиваем полный цикл доставки товаров для наших
+                              клиентов
+                           </p>
+                           <div class="four__info--mob">
+                              <p class="four__description four__desctiption--mob ru" translate="four-description-2">Наличие собственной курьерской службы дает нам возможность обучать и совершенствовать наших курьеров в соответствии с нашими ценностями и ожиданиями клиентов. Мы стремимся к предоставлению высочайшего стандарта обслуживания, и наши курьеры - неотъемлемая часть этого процесса. Полный контроль над процессом доставки позволяет нам точно следить за каждым заказом и гарантировать клиентам надежные сроки доставки, вне зависимости от их местоположения. Для наших клиентов в Африке мы разработали систему экспресс-доставки в тот же день при оформлении заказа до 17:00. Это позволяет обеспечить быструю и удобную доставку, чтобы удовлетворить потребности наших клиентов.</p>
+                           </div>
+                        </div>
+                        <div class="full-info full-info--hidden" translate="none">Подробнее</div>
+                        <div class="full-info full-info--visible" translate="four-next">Подробнее</div>
+                     </div>
+                     <div class="four__card four__card-2" data-value="call-centre">
+                        <div class="four__exit four__exit--mob">
+                           <img loading="lazy" src="img/exit.png" alt="">
+                        </div>
+                        <div class="four__top">
+                           <div class="four__circle"><img loading="lazy" src="img/icon3.svg" alt="" class="four__img"></div>
+                        </div>
+                        <div class="four__content">
+                           <h3 class="four__subtitle ru" translate="four-title-3">Контакт-центры</h3>
+                           <p class="four__description ru" translate="four-subtitle-3">Используем сеть Контакт-центров для продаж и поддержки
+                              наших клиентов в разных странах мира
+                           </p>
+                           <div class="four__info--mob">
+                              <p class="four__description four__desctiption--mob ru" translate="four-description-3">14 собственных Контакт-центров – одно из ключевых преимуществ компании. В них трудятся профессионалы, говорящие на языке клиентов, что обеспечивает легкость и понимание в общении. За 6 лет работы над скриптами мы совершенствовали каждый аспект общения. Это время позволило нам создать идеальный баланс между информативностью и эмоциональным подходом, чтобы удовлетворить потребности клиентов. Результат этой длительной работы проявляется в высоком уровне подтверждения заказов.</p>
+                           </div>
+                        </div>
+                        <div class="full-info full-info--hidden" translate="none">Подробнее</div>
+                        <div class="full-info full-info--visible" translate="four-next">Подробнее</div>
+                     </div>
+                     <div class="four__card four__card-3" data-value="it">
+                        <div class="four__exit four__exit--mob">
+                           <img loading="lazy" src="img/exit.png" alt="">
+                        </div>
+                        <div class="four__top">
+                           <div class="four__circle"><img loading="lazy" src="img/icon4.svg" alt="" class="four__img"></div>
+                        </div>
+                        <div class="four__content">
+                           <h3 class="four__subtitle ru" translate="four-title-4">ИТ-разработка</h3>
+                           <p class="four__description ru" translate="four-subtitle-4">Разработано более 18 программ для планирования, учета и
+                              анализа бизнес-процессов
+                           </p>
+                           <div class="four__info--mob">
+                              <p class="four__description four__desctiption--mob ru" translate="four-description-4">Наша компания обладает полным циклом разработки ПО, который включает анализ, планирование, проектирование, программирование, тестирование и поддержку после выпуска. Наши разработчики имеют большой опыт работы с различными технологиями и языками программирования, такими как Java, Golang, Python, PHP и другими. Мы также используем разнообразные фреймворки и инструменты для разработки, включая Spring, .NET, Django, Laravel и многие другие. Мы продолжаем следовать современным методологиям разработки, таким как Agile и DevOps, чтобы обеспечить гибкость, скорость и качество наших проектов. Кроме того, мы постоянно учимся и следим за последними тенденциями в области разработки ПО.</p>
+                           </div>
+                        </div>
+                        <div class="full-info full-info--hidden" translate="none">Подробнее</div>
+                        <div class="full-info full-info--visible" translate="four-next">Подробнее</div>
+                     </div>
+                     <div class="four__info">
+                        <div class="four__card-info four__card-0">
+                           <div class="four__exit">
+                              <img loading="lazy" src="img/exit.png" alt="">
+                           </div>
+                           <p class="four__description ru" translate="four-description-1">Мы осуществляем онлайн-торговлю физическими товарами на трех континентах. Владеем собственной инфраструктурой для производства товаров, курьерской доставки и Контакт-центров. Партнерская программа* позволяет эффективно привлекать трафик и генерировать тысячи интернет-заявок ежедневно. Наша *Партнерская Программа – это специально разработанное программное обеспечение, предоставляющее сервис для сотрудничества с партнерами, цель которого состоит в бизнес-продвижении и генерации лидов. Наша сеть насчитывает более 17000 активных партнеров по всему миру, которые получают вознаграждение за каждого привлеченного в интернете покупателя.</p>
+                        </div>
+                        <div class="four__card-info four__card-1">
+                           <div class="four__exit">
+                              <img loading="lazy" src="img/exit.png" alt="">
+                           </div>
+                           <p class="four__description ru" translate="four-description-2">Наличие собственной курьерской службы дает нам возможность обучать и совершенствовать наших курьеров в соответствии с нашими ценностями и ожиданиями клиентов. Мы стремимся к предоставлению высочайшего стандарта обслуживания, и наши курьеры - неотъемлемая часть этого процесса. Полный контроль над процессом доставки позволяет нам точно следить за каждым заказом и гарантировать клиентам надежные сроки доставки, вне зависимости от их местоположения. Для наших клиентов в Африке мы разработали систему экспресс-доставки в тот же день при оформлении заказа до 17:00. Это позволяет обеспечить быструю и удобную доставку, чтобы удовлетворить потребности наших клиентов.</p>
+                        </div>
+                        <div class="four__card-info four__card-2">
+                           <div class="four__exit">
+                              <img loading="lazy" src="img/exit.png" alt="">
+                           </div>
+                           <p class="four__description ru" translate="four-description-3">14 собственных Контакт-центров – одно из ключевых преимуществ компании. В них трудятся профессионалы, говорящие на языке клиентов, что обеспечивает легкость и понимание в общении. За 6 лет работы над скриптами мы совершенствовали каждый аспект общения. Это время позволило нам создать идеальный баланс между информативностью и эмоциональным подходом, чтобы удовлетворить потребности клиентов. Результат этой длительной работы проявляется в высоком уровне подтверждения заказов.</p>
+                        </div>
+                        <div class="four__card-info four__card-3">
+                           <div class="four__exit">
+                              <img loading="lazy" src="img/exit.png" alt="">
+                           </div>
+                           <p class="four__description ru" translate="four-description-4">Наша компания обладает полным циклом разработки ПО, который включает анализ, планирование, проектирование, программирование, тестирование и поддержку после выпуска. Наши разработчики имеют большой опыт работы с различными технологиями и языками программирования, такими как Java, Golang, Python, PHP и другими. Мы также используем разнообразные фреймворки и инструменты для разработки, включая Spring, .NET, Django, Laravel и многие другие. Мы продолжаем следовать современным методологиям разработки, таким как Agile и DevOps, чтобы обеспечить гибкость, скорость и качество наших проектов. Кроме того, мы постоянно учимся и следим за последними тенденциями в области разработки ПО.</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="section five" id="five">
+            <div class="container">
+               <div class="five__div">
+                  <h2 class="title ru five__title" translate="five-title">Как мы <br> работаем?</h2>
+               </div>
+               <div class="five__main">
+                  <div class="five__line">
+                     <img loading="lazy" class="five__line--1" src="img/five-line1.svg" alt="">
+                     <img loading="lazy" class="five__line--2" src="img/five-line2.svg" alt="">
+                     <img loading="lazy" class="five__line--3" src="img/five-line3.png" alt="">
+                     <div class="five__line--hidden"></div>
+                  </div>
+                  <div class="five__block">
+                     <div class="five__ava">
+                        <img loading="lazy" src="img/five1.svg" alt="" class="five__ava--img">
+                     </div>
+                     <div class="five__content five__content--small">
+                        <h3 class="five__subtitle ru" translate="five-subtitle-1">Разработка продукта</h3>
+                        <p class="five__description ru" translate="five-description-1">За 9 лет на рынке мы собрали команду профессионалов, которая может превратить идею в готовый к производству продукт. </p>
+                     </div>
+                  </div>
+                  <div class="five__block">
+                     <div class="five__ava">
+                        <img loading="lazy" src="img/five2.svg" alt="" class="five__ava--img">
+                     </div>
+                     <div class="five__content five__content--small">
+                        <h3 class="five__subtitle ru" translate="five-subtitle-2">Производство продукта</h3>
+                        <p class="five__description ru" translate="five-description-2">Мы сотрудничаем с проверенными компаниями по всему миру, которые помогают реализовать наши продукты на локальных рынках.</p>
+                     </div>
+                  </div>
+                  <div class="five__block">
+                     <div class="five__ava">
+                        <img loading="lazy" src="img/five3.svg" alt="" class="five__ava--img">
+                     </div>
+                     <div class="five__content five__content--small">
+                        <h3 class="five__subtitle ru" translate="five-subtitle-3">E-commerce</h3>
+                        <p class="five__description ru" translate="five-description-3">Онлайн продвижение позволяет значительно расширить географию распространения наших продуктов.</p>
+                     </div>
+                  </div>
+                  <div class="five__block">
+                     <div class="five__ava">
+                        <img loading="lazy" src="img/five4.svg" alt="" class="five__ava--img">
+                     </div>
+                     <div class="five__content five__content--big">
+                        <h3 class="five__subtitle ru" translate="five-subtitle-4">Контакт-центр</h3>
+                        <p class="five__description ru" translate="five-description-4">Наши локальные Контакт-центры базируются в странах Европы, Латинской Америки и Африки. Ежегодно они продают более 2 000 000 позиций. </p>
+                     </div>
+                  </div>
+                  <div class="five__block">
+                     <div class="five__ava">
+                        <img loading="lazy" src="img/five5.svg" alt="" class="five__ava--img">
+                     </div>
+                     <div class="five__content five__content--big">
+                        <h3 class="five__subtitle ru" translate="five-subtitle-5">Курьерская служба</h3>
+                        <p class="five__description ru" translate="five-description-5">Мы разработали свою курьерскую службу, которая работает в 26 странах на 3 континентах. Это обеспечивает максимально быструю доставку.</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="section six">
+            <div class="container">
+               <h2 class="title ru six__title" translate="six-title">Что мы используем в работе?</h2>
+               <div class="six__main">
+                  <div class="six__btns">
+                     <div class="six__btn six__btn--active ru" data="0" translate="six-btn">Все</div>
+                     <div class="six__btn ru" data="1">E-commerce</div>
+                     <div class="six__btn ru" data="2">IT</div>
+                  </div>
+                  <div class="six__blocks">
+                     <div class="six__all">
+                        <div class="six__block" data="1">
+                           <div class="six__img">
+                              <img loading="lazy" src="img/six1.png" alt="">
+                           </div>
+                           <p class="six__description ru">React</p>
+                        </div>
+                        <div class="six__block" data="1">
+                           <div class="six__img">
+                              <img loading="lazy" src="img/six2.png" alt="">
+                           </div>
+                           <p class="six__description ru">Kotlin</p>
+                        </div>
+                        <div class="six__block"  data="1">
+                           <div class="six__img">
+                              <img loading="lazy" src="img/six3.png" alt="">
+                           </div>
+                           <p class="six__description ru">Python</p>
+                        </div>
+                        <div class="six__block"  data="1">
+                           <div class="six__img">
+                              <img loading="lazy" src="img/six4.png" alt="">
+                           </div>
+                           <p class="six__description ru">Postman</p>
+                        </div>
+                        <div class="six__block"  data="1">
+                           <div class="six__img">
+                              <img loading="lazy" src="img/six5.png" alt="">
+                           </div>
+                           <p class="six__description ru">Selenium</p>
+                        </div>
+                        <div class="six__block" data="1">
+                           <div class="six__img">
+                              <img loading="lazy" src="img/six6.png" alt="">
+                           </div>
+                           <p class="six__description ru">Docker</p>
+                        </div>
+                        <div class="six__block" data="1">
+                           <div class="six__img">
+                              <img loading="lazy" src="img/six7.png" alt="">
+                           </div>
+                           <p class="six__description ru">Kubernetes</p>
+                        </div>
+                        <div class="six__block" data="1">
+                           <div class="six__img">
+                              <img loading="lazy" src="img/six8.png" alt="">
+                           </div>
+                           <p class="six__description ru">NGINX</p>
+                        </div>
+                        <div class="six__block" data="1">
+                           <div class="six__img">
+                              <img loading="lazy" src="img/six9.png" alt="">
+                           </div>
+                           <p class="six__description ru">Grafana</p>
+                        </div>
+                        <div class="six__block" data="1">
+                           <div class="six__img">
+                              <img loading="lazy" src="img/six10.png" alt="">
+                           </div>
+                           <p class="six__description ru">Kafka</p>
+                        </div>
+                        <div class="six__block" data="1">
+                           <div class="six__img">
+                              <img loading="lazy" src="img/six11.png" alt="">
+                           </div>
+                           <p class="six__description ru">PostgreSQL</p>
+                        </div>
+                        <div class="six__block" data="1">
+                           <div class="six__img">
+                              <img loading="lazy" src="img/six12.png" alt="">
+                           </div>
+                           <p class="six__description ru">Redis</p>
+                        </div>
+                        <div class="six__block" data="1">
+                           <div class="six__img">
+                              <img loading="lazy" src="img/six13.png" alt="">
+                           </div>
+                           <p class="six__description ru">1C</p>
+                        </div>
+                        <div class="six__block" data="1">
+                           <div class="six__img">
+                              <img loading="lazy" src="img/six14.png" alt="">
+                           </div>
+                           <p class="six__description ru">TypeScript</p>
+                        </div>
+                        <div class="six__block" data="1">
+                           <div class="six__img">
+                              <img loading="lazy" src="img/six15.png" alt="">
+                           </div>
+                           <p class="six__description ru">GitLab</p>
+                        </div>
+                        <div class="six__block" data="1">
+                           <div class="six__img">
+                              <img loading="lazy" src="img/six16.png" alt="">
+                           </div>
+                           <p class="six__description ru">Graylog</p>
+                        </div>
+                        <div class="six__block" data="1">
+                           <div class="six__img">
+                              <img loading="lazy" src="img/six17.png" alt="">
+                           </div>
+                           <p class="six__description ru">VueJS</p>
+                        </div>
+                        <div class="six__block" data="2">
+                           <div class="six__img">
+                              <img loading="lazy" src="img/six18.png" alt="">
+                           </div>
+                           <p class="six__description ru">Goland</p>
+                        </div>
+                        <div class="six__block" data="2">
+                           <div class="six__img">
+                              <img loading="lazy" src="img/six19.png" alt="">
+                           </div>
+                           <p class="six__description ru">Laravel</p>
+                        </div>
+                        <div class="six__block" data="2">
+                           <div class="six__img">
+                              <img loading="lazy" src="img/six20.png" alt="">
+                           </div>
+                           <p class="six__description ru">PHP</p>
+                        </div>
+                        <div class="six__block" data="2">
+                           <div class="six__img">
+                              <img loading="lazy" src="img/six21.png" alt="">
+                           </div>
+                           <p class="six__description ru">FusionAuth</p>
+                        </div>
+                        <div class="six__block" data="2">
+                           <div class="six__img">
+                              <img loading="lazy" src="img/six22.png" alt="">
+                           </div>
+                           <p class="six__description ru">Sentry</p>
+                        </div>
+                        <div class="six__block" data="2">
+                           <div class="six__img">
+                              <img loading="lazy" src="img/six23.png" alt="">
+                           </div>
+                           <p class="six__description ru">OpenAI</p>
+                        </div>
+                        <div class="six__block" data="2">
+                           <div class="six__img">
+                              <img loading="lazy" src="img/six24.png" alt="">
+                           </div>
+                           <p class="six__description ru">Figma</p>
+                        </div>
+                        <div class="six__block" data="2">
+                           <div class="six__img">
+                              <img loading="lazy" src="img/six25.png" alt="">
+                           </div>
+                           <p class="six__description ru">Adobe Systems</p>
+                        </div>
+                        <div class="six__block" data="2">
+                           <div class="six__img">
+                              <img loading="lazy" src="img/six26.png" alt="">
+                           </div>
+                           <p class="six__description ru">Cinema 4D</p>
+                        </div>
+                        <div class="six__block" data="2">
+                           <div class="six__img">
+                              <img loading="lazy" src="img/six27.png" alt="">
+                           </div>
+                           <p class="six__description ru">Miro</p>
+                        </div>
+                        <div class="six__block" data="2">
+                           <div class="six__img">
+                              <img loading="lazy" src="img/six28.png" alt="">
+                           </div>
+                           <p class="six__description ru">Jira</p>
+                        </div>
+                        <div class="six__block" data="2">
+                           <div class="six__img">
+                              <img loading="lazy" src="img/six29.png" alt="">
+                           </div>
+                           <p class="six__description ru">Prometheus</p>
+                        </div>
+                        <div class="six__block" data="2">
+                           <div class="six__img">
+                              <img loading="lazy" src="img/six30.png" alt="">
+                           </div>
+                           <p class="six__description ru">YouTrack</p>
+                        </div>
+                     </div>
+                     <div class="six__visible"></div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="section seven">
+            <div class="container">
+               <p class="promo__start" translate="seven-start">Карьера</p>
+               <div class="seven-flex">
+                  <div>
+                     <h2 class="four__title ru" translate="seven-title">Работа в <span class="three--extra">React Group</span></h2>
+                  </div>
+                  <p class="about_company" translate="seven-subtitle">Присутствие в разных странах обуславливает интернациональный статус компании и способствует постоянному культурному обмену между сотрудниками.</p>
+               </div>
+               <div class="seven-grid">
+                  <div class="seven-grid__item">
+                     <picture>
+                      <source type="image/webp" srcset="img/up-img.webp">
+                      <source type="image/jpeg" srcset="img/up-img.jpg">
+                      <img loading="lazy" src="img/up-img.jpg" alt="Рост и развитие">
+                     </picture>
+                     <div>
+                        <p class="promo__num-bottom" translate="seven-item-1">Рост и развитие</p>
+                        <p class="seven_p" translate="seven-description-1">Каждый сотрудник может не только улучшить свои навыки и знания, но и освоить совершенно новую специальность.
+                        </p>
+                     </div>
+                  </div>
+                  <div class="seven-grid__item">
+                     <picture>
+                      <source type="image/webp" srcset="img/distance-img.webp">
+                      <source type="image/jpeg" srcset="img/distance-img.jpg">
+                      <img loading="lazy" src="img/distance-img.jpg" alt="Удаленная работа">
+                     </picture>
+                     <div>
+                        <p class="promo__num-bottom" translate="seven-title-2">Удаленная работа</p>
+                        <p class="seven_p" translate="seven-description-2">Наша компания обладает гибкой системой перевода сотрудников между офисами в разных странах, предоставляя возможности для обучения и повышения квалификации.</p>
+                     </div>
+                  </div>
+                  <div class="seven-grid__item">
+                     <picture>
+                      <source type="image/webp" srcset="img/corplife-img.webp">
+                      <source type="image/jpeg" srcset="img/corplife-img.jpg">
+                      <img loading="lazy" src="img/corplife-img.jpg" alt="Корпоративная жизнь">
+                     </picture>
+                     <div>
+                        <p class="promo__num-bottom" translate="seven-title-3">Корпоративная жизнь</p>
+                        <p class="seven_p" translate="seven-description-3">Мы предлагаем нашим сотрудникам развлекательные мероприятия,
+                           корпоративные поездки и мастер-классы.
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="section eight" id="six">
+            <div class="container">
+               <h2 class="four__title ru" id="vacancies" translate="seven-title">Актуальные вакансии</h2>
+               <div class="eight-grid">
+                  <div class="eight-grid__item-container">
+                     <div class="eight-grid__item">
+                        <div>
+                           <span translate="prof-title-1">1C-Developer</span>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"
+                              fill="none">
+                              <path
+                                 d="M27 19.4971H19.5V26.9971C19.5 27.3949 19.342 27.7764 19.0607 28.0577C18.7794 28.339 18.3978 28.4971 18 28.4971C17.6022 28.4971 17.2206 28.339 16.9393 28.0577C16.658 27.7764 16.5 27.3949 16.5 26.9971V19.4971H9C8.60218 19.4971 8.22064 19.339 7.93934 19.0577C7.65804 18.7764 7.5 18.3949 7.5 17.9971C7.5 17.5992 7.65804 17.2177 7.93934 16.9364C8.22064 16.6551 8.60218 16.4971 9 16.4971H16.5V8.99707C16.5 8.59925 16.658 8.21771 16.9393 7.93641C17.2206 7.65511 17.6022 7.49707 18 7.49707C18.3978 7.49707 18.7794 7.65511 19.0607 7.93641C19.342 8.21771 19.5 8.59925 19.5 8.99707V16.4971H27C27.3978 16.4971 27.7794 16.6551 28.0607 16.9364C28.342 17.2177 28.5 17.5992 28.5 17.9971C28.5 18.3949 28.342 18.7764 28.0607 19.0577C27.7794 19.339 27.3978 19.4971 27 19.4971Z"
+                                 fill="#E9ECF0" />
+                           </svg>
+                        </div>
+                        <div class="eight-grid__item-info">
+                           <h5 translate="prof-subtitle-1">Ваши основные задачи:</h5>
+                           <ul>
+                              <li translate="prof-li-1-1-1">Участие в разработке системы управленческого учета с нуля на основе БСП;</li>
+                              <li translate="prof-li-1-2-1">Анализ бизнес-процессов компании и создание функциональных блоков в составе рабочей группы на платформе 1С;</li>
+                              <li translate="prof-li-1-3-1">Написание инструкций для пользователей по работе с функционалом, оформление необходимой технической документации;</li>
+                              <li translate="prof-li-1-4-1">Оперативное решение инцидентов;</li>
+                           </ul>
+                           <h5 translate="prof-subtitle-2">Условия работы:</h5>
+                           <ul>
+                              <li translate="prof-li-2-1-1">Испытательный срок - 2 месяца;</li>
+                              <li translate="prof-li-2-2-1">Гибкое начало рабочего дня (с 10 до 12 утра);</li>
+                              <li translate="prof-li-2-3-1">Возможность выбора режима работы (офис/гибрид/удаленка);</li>
+                              <li translate="prof-li-2-4-1">Оплачиваемый отпуск 28 (дней);</li>
+                              <li translate="prof-li-2-5-1">Высокий уровень дохода и прозрачная мотивация (обсуждается по результатам собеседования);</li>
+                              <li translate="prof-li-2-6-1">Компенсация курсов повышения квалификации (полностью/частично);</li>
+                              <li translate="prof-li-2-7-1">Компенсация фитнес-зала (полностью/частично).</li>
+                           </ul>
+                           <button class="btn ru foo__btn" translate="btn">Связаться с нами</button>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="eight-grid__item-container">
+                     <div class="eight-grid__item">
+                        <div>
+                           <span translate="prof-title-2">Менеджер по маркетингу и PR</span>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"
+                              fill="none">
+                              <path
+                                 d="M27 19.4971H19.5V26.9971C19.5 27.3949 19.342 27.7764 19.0607 28.0577C18.7794 28.339 18.3978 28.4971 18 28.4971C17.6022 28.4971 17.2206 28.339 16.9393 28.0577C16.658 27.7764 16.5 27.3949 16.5 26.9971V19.4971H9C8.60218 19.4971 8.22064 19.339 7.93934 19.0577C7.65804 18.7764 7.5 18.3949 7.5 17.9971C7.5 17.5992 7.65804 17.2177 7.93934 16.9364C8.22064 16.6551 8.60218 16.4971 9 16.4971H16.5V8.99707C16.5 8.59925 16.658 8.21771 16.9393 7.93641C17.2206 7.65511 17.6022 7.49707 18 7.49707C18.3978 7.49707 18.7794 7.65511 19.0607 7.93641C19.342 8.21771 19.5 8.59925 19.5 8.99707V16.4971H27C27.3978 16.4971 27.7794 16.6551 28.0607 16.9364C28.342 17.2177 28.5 17.5992 28.5 17.9971C28.5 18.3949 28.342 18.7764 28.0607 19.0577C27.7794 19.339 27.3978 19.4971 27 19.4971Z"
+                                 fill="#E9ECF0" />
+                           </svg>
+                        </div>
+                        <div class="eight-grid__item-info">
+                           <h5 translate="prof-subtitle-1">Ваши основные задачи:</h5>
+                           <ul>
+                              <li translate="prof-li-1-1-2">Продвижение бренда на аудиторию медиабайеров СНГ (ЦА - арбитражные команды, senior байеры);</li>
+                              <li translate="prof-li-1-2-2">Реализация проектов для привлечения внимания к бренду и продвижения канала (конкурсы, гивы, игры с механикой за подписку и т. д.);</li>
+                              <li translate="prof-li-1-3-2">Разработка концепций рекламных роликов, интервью, подкастов, и их успешная реализация;</li>
+                              <li translate="prof-li-1-4-2">Написание PR-материалов, новостных статей, арбитражных кейсов совместно с копирайтерами и смм-менеджерами компании;</li>
+                              <li translate="prof-li-1-5-2">Взаимодействие с арбитражными СМИ;</li>
+                              <li translate="prof-li-1-6-2">Работа с брендингом: идея, постановка ТЗ дизайнерам, согласование, поиск поставщиков, реализация;</li>
+                              <li translate="prof-li-1-7-2">Составление контент-планов, разработка способов коммуникации с аудиторией компании;</li>
+                              <li translate="prof-li-1-8-2">Ведение социальных сетей совместно с командой копирайтеров и SMM менеджером: Instagram, Facebook, Telegram.</li>
+                           </ul>
+                           <h5 translate="prof-subtitle-2">Условия работы:</h5>
+                           <ul>
+                              <li translate="prof-li-2-1-2">Испытательный срок - 2 месяца;</li>
+                              <li translate="prof-li-2-2-2">Гибкое начало рабочего дня (с 10 до 12 утра);</li>
+                              <li translate="prof-li-2-3-2">Возможность выбора режима работы (офис/гибрид/удаленка);</li>
+                              <li translate="prof-li-2-4-2">Оплачиваемый отпуск 28 (дней);</li>
+                              <li translate="prof-li-2-5-2">Высокий уровень дохода и прозрачная мотивация (обсуждается по результатам собеседования);</li>
+                              <li translate="prof-li-2-6-2">Компенсация курсов повышения квалификации (полностью/частично);</li>
+                              <li translate="prof-li-2-7-2">Компенсация фитнес-зала (полностью/частично);</li>
+                           </ul>
+                           <button class="btn ru foo__btn" translate="btn">Связаться с нами</button>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="eight-grid__item-container">
+                     <div class="eight-grid__item">
+                        <div>
+                           <span translate="prof-title-3">Руководитель службы технической поддержки и мониторинга</span>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"
+                              fill="none">
+                              <path
+                                 d="M27 19.4971H19.5V26.9971C19.5 27.3949 19.342 27.7764 19.0607 28.0577C18.7794 28.339 18.3978 28.4971 18 28.4971C17.6022 28.4971 17.2206 28.339 16.9393 28.0577C16.658 27.7764 16.5 27.3949 16.5 26.9971V19.4971H9C8.60218 19.4971 8.22064 19.339 7.93934 19.0577C7.65804 18.7764 7.5 18.3949 7.5 17.9971C7.5 17.5992 7.65804 17.2177 7.93934 16.9364C8.22064 16.6551 8.60218 16.4971 9 16.4971H16.5V8.99707C16.5 8.59925 16.658 8.21771 16.9393 7.93641C17.2206 7.65511 17.6022 7.49707 18 7.49707C18.3978 7.49707 18.7794 7.65511 19.0607 7.93641C19.342 8.21771 19.5 8.59925 19.5 8.99707V16.4971H27C27.3978 16.4971 27.7794 16.6551 28.0607 16.9364C28.342 17.2177 28.5 17.5992 28.5 17.9971C28.5 18.3949 28.342 18.7764 28.0607 19.0577C27.7794 19.339 27.3978 19.4971 27 19.4971Z"
+                                 fill="#E9ECF0" />
+                           </svg>
+                        </div>
+                        <div class="eight-grid__item-info">
+                           <h5 translate="prof-subtitle-1">Ваши основные задачи:</h5>
+                           <ul>
+                              <li translate="prof-li-1-1-3">Руководство первой линии поддержки;</li>
+                              <li translate="prof-li-1-2-3">Формирование стратегии развития функции C5;</li>
+                              <li translate="prof-li-1-3-3">Отслеживание выполнения различных метрик FCR, FRT, SLA, OLA и т.д.;</li>
+                              <li translate="prof-li-1-4-3">Разработка и актуализация инструкций, алгоритмов работы (Confluence);</li>
+                              <li translate="prof-li-1-5-3">Приемка новых сервисов и систем в поддержку;</li>
+                              <li translate="prof-li-1-6-3">Формирование регулярной отчетности;</li>
+                              <li translate="prof-li-1-7-3">Работа ITSM системах Jira Atlassian;</li>
+                              <li translate="prof-li-1-8-3">Кросс функциональное взаимодействие с 2 и 3 линии поддержки.</li>
+                           </ul>
+                           <h5 translate="prof-subtitle-2">Условия работы:</h5>
+                           <ul>
+                              <li translate="prof-li-2-1-3">Испытательный срок - 2 месяца;</li>
+                              <li translate="prof-li-2-2-3">Гибкое начало рабочего дня (с 10 до 12 утра);</li>
+                              <li translate="prof-li-2-3-3">График работы - офис (Москва);</li>
+                              <li translate="prof-li-2-4-3">Оплачиваемый отпуск 28 (дней);</li>
+                              <li translate="prof-li-2-5-3">Высокий уровень дохода и прозрачная мотивация (обсуждается по результатам собеседования);</li>
+                              <li translate="prof-li-2-6-3">Компенсация курсов повышения квалификации (полностью/частично);</li>
+                              <li translate="prof-li-2-7-3">Компенсация фитнес-зала (полностью/частично).</li>
+                           </ul>
+                           <button class="btn ru foo__btn" translate="btn">Связаться с нами</button>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="eight-grid__item-container">
+                     <div class="eight-grid__item">
+                        <div>
+                           <span translate="prof-title-4">Frontend developer</span>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"
+                              fill="none">
+                              <path
+                                 d="M27 19.4971H19.5V26.9971C19.5 27.3949 19.342 27.7764 19.0607 28.0577C18.7794 28.339 18.3978 28.4971 18 28.4971C17.6022 28.4971 17.2206 28.339 16.9393 28.0577C16.658 27.7764 16.5 27.3949 16.5 26.9971V19.4971H9C8.60218 19.4971 8.22064 19.339 7.93934 19.0577C7.65804 18.7764 7.5 18.3949 7.5 17.9971C7.5 17.5992 7.65804 17.2177 7.93934 16.9364C8.22064 16.6551 8.60218 16.4971 9 16.4971H16.5V8.99707C16.5 8.59925 16.658 8.21771 16.9393 7.93641C17.2206 7.65511 17.6022 7.49707 18 7.49707C18.3978 7.49707 18.7794 7.65511 19.0607 7.93641C19.342 8.21771 19.5 8.59925 19.5 8.99707V16.4971H27C27.3978 16.4971 27.7794 16.6551 28.0607 16.9364C28.342 17.2177 28.5 17.5992 28.5 17.9971C28.5 18.3949 28.342 18.7764 28.0607 19.0577C27.7794 19.339 27.3978 19.4971 27 19.4971Z"
+                                 fill="#E9ECF0" />
+                           </svg>
+                        </div>
+                        <div class="eight-grid__item-info">
+                           <h5 translate="prof-subtitle-1">Ваши основные задачи:</h5>
+                           <ul>
+                              <li translate="prof-li-1-1-4"> Разработка CRM/админки для управления core продуктом;</li>
+                              <li translate="prof-li-1-2-4">Участие в код ревью;</li>
+                              <li translate="prof-li-1-3-4">Участие в планировании архитектуры;</li>
+                              <li translate="prof-li-1-4-4">Рисовать красивые графики и диаграммы;</li>
+                              <li translate="prof-li-1-5-4">Стек: React JS, Typescript, MobX, figma, scss, Git, Rest Api.</li>
+                           </ul>
+                           <h5 translate="prof-subtitle-2">Условия работы:</h5>
+                           <ul>
+                              <li translate="prof-li-2-1-4">Испытательный срок - 2 месяца;</li>
+                              <li translate="prof-li-2-2-4">Гибкое начало рабочего дня (с 10 до 12 утра);</li>
+                              <li translate="prof-li-2-3-4">График работы - гибрид/удаленка;</li>
+                              <li translate="prof-li-2-4-4">Оплачиваемый отпуск 28 (дней);</li>
+                              <li translate="prof-li-2-5-4">Высокий уровень дохода и прозрачная мотивация (обсуждается по результатам собеседования);</li>
+                              <li translate="prof-li-2-6-4">Компенсация курсов повышения квалификации (полностью/частично);</li>
+                              <li translate="prof-li-2-7-4">Компенсация фитнес-зала (полностью/частично).</li>
+                           </ul>
+                           <button class="btn ru foo__btn" translate="btn">Связаться с нами</button>
+                        </div>
+                     </div>
+                  </div> 
+
+                  <div class="eight-grid__item-container">
+                     <div class="eight-grid__item">
+                        <div>
+                           <span translate="prof-title-5">Курьер (Гана, Кения)</span>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"
+                              fill="none">
+                              <path
+                                 d="M27 19.4971H19.5V26.9971C19.5 27.3949 19.342 27.7764 19.0607 28.0577C18.7794 28.339 18.3978 28.4971 18 28.4971C17.6022 28.4971 17.2206 28.339 16.9393 28.0577C16.658 27.7764 16.5 27.3949 16.5 26.9971V19.4971H9C8.60218 19.4971 8.22064 19.339 7.93934 19.0577C7.65804 18.7764 7.5 18.3949 7.5 17.9971C7.5 17.5992 7.65804 17.2177 7.93934 16.9364C8.22064 16.6551 8.60218 16.4971 9 16.4971H16.5V8.99707C16.5 8.59925 16.658 8.21771 16.9393 7.93641C17.2206 7.65511 17.6022 7.49707 18 7.49707C18.3978 7.49707 18.7794 7.65511 19.0607 7.93641C19.342 8.21771 19.5 8.59925 19.5 8.99707V16.4971H27C27.3978 16.4971 27.7794 16.6551 28.0607 16.9364C28.342 17.2177 28.5 17.5992 28.5 17.9971C28.5 18.3949 28.342 18.7764 28.0607 19.0577C27.7794 19.339 27.3978 19.4971 27 19.4971Z"
+                                 fill="#E9ECF0" />
+                           </svg>
+                        </div>
+                        <div class="eight-grid__item-info">
+                           <h5 translate="prof-subtitle-1">Ваши основные задачи:</h5>
+                           <ul>
+                              <li translate="prof-li-1-1-5">Доставка заказов клиентам;</li>
+                              <li translate="prof-li-1-2-5">Мониторинг системы и контроль заказов;</li>
+                              <li translate="prof-li-1-3-5">Умение быстро реагировать на возникающие проблемы  и находить решения;</li>
+                              <li translate="prof-li-1-4-5">Наличие собственного транспорта обязательно!</li>
+                           </ul>
+                           <h5 translate="prof-subtitle-2">Условия работы:</h5>
+                           <ul>
+                              <li translate="prof-li-2-1-5">Компенсация затрат на топливо;</li>
+                              <li translate="prof-li-2-2-5">Мы предоставляем форму для работы;</li>
+                              <li translate="prof-li-2-3-5">График работы - полный день, понедельник-суббота;</li>
+                              <li translate="prof-li-2-4-5">Высокий уровень дохода и прозрачная мотивация.</li>
+                           </ul>
+                           <button class="btn ru foo__btn" translate="btn">Связаться с нами</button>
+                        </div>
+                     </div>
+                  </div>
+
+
+                  <div class="eight-grid__item-container">
+                     <div class="eight-grid__item">
+                        <div>
+                           <span translate="prof-title-6">Оператор call-центра (Гана, Кения)</span>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"
+                              fill="none">
+                              <path
+                                 d="M27 19.4971H19.5V26.9971C19.5 27.3949 19.342 27.7764 19.0607 28.0577C18.7794 28.339 18.3978 28.4971 18 28.4971C17.6022 28.4971 17.2206 28.339 16.9393 28.0577C16.658 27.7764 16.5 27.3949 16.5 26.9971V19.4971H9C8.60218 19.4971 8.22064 19.339 7.93934 19.0577C7.65804 18.7764 7.5 18.3949 7.5 17.9971C7.5 17.5992 7.65804 17.2177 7.93934 16.9364C8.22064 16.6551 8.60218 16.4971 9 16.4971H16.5V8.99707C16.5 8.59925 16.658 8.21771 16.9393 7.93641C17.2206 7.65511 17.6022 7.49707 18 7.49707C18.3978 7.49707 18.7794 7.65511 19.0607 7.93641C19.342 8.21771 19.5 8.59925 19.5 8.99707V16.4971H27C27.3978 16.4971 27.7794 16.6551 28.0607 16.9364C28.342 17.2177 28.5 17.5992 28.5 17.9971C28.5 18.3949 28.342 18.7764 28.0607 19.0577C27.7794 19.339 27.3978 19.4971 27 19.4971Z"
+                                 fill="#E9ECF0" />
+                           </svg>
+                        </div>
+                        <div class="eight-grid__item-info">
+                           <h5 translate="prof-subtitle-1">Ваши основные задачи:</h5>
+                           <ul>
+                              <li translate="prof-li-1-1-6">Обработка заявок;</li>
+                              <li translate="prof-li-1-2-6">Ведение коммуникации с клиентами по телефону;</li>
+                              <li translate="prof-li-1-3-6">Решение проблем и работа с возражениями;</li>
+                              <li translate="prof-li-1-4-6">Осуществлять продажи.</li>
+                           </ul>
+                           <h5 translate="prof-subtitle-2">Условия работы:</h5>
+                           <ul>
+                              <li translate="prof-li-2-1-6">График работы - полный день, понедельник-суббота;</li>
+                              <li translate="prof-li-2-2-6">Высокий уровень дохода и прозрачная мотивация.</li>
+                           </ul>
+                           <button class="btn ru foo__btn" translate="btn">Связаться с нами</button>
+                        </div>
+                     </div>
+                  </div>
+
+                                  
+               </div>
+            </div>
+         </section>
+         <section class="section nine">
+            <div class="container">
+               <h2 class="four__title ru" translate="nine-title">Другие наши проекты</h2>
+               <div class="nine__item">
+                  <h4 class="nine-item__title">Tibiti</h4>
+                  <p class="nine-item__p" translate="nine-one">B2B онлайн платформа для организации <br> конференций в виртуальном
+                     пространстве.
+                  </p>
+                  <a href="https://tibiti.com" class="nine-item__a" target="_blank" translate="four-next">Подробнее</a>
+                  <picture>
+                   <source type="image/webp" srcset="img/tibiti.webp">
+                   <source type="image/jpeg" srcset="img/tibiti.jpg">
+                   <img loading="lazy" src="img/tibiti.jpg" alt="tibiti">
+                  </picture>
+               </div>
+               <div class="nine__item">
+                  <h4 class="nine-item__title">Genius Pay</h4>
+                  <p class="nine-item__p" translate="nine-two">Собственная платежная система с лицензией от <br> европейского банка.</p>
+                  <a href="https://www.genius-pay.io" class="nine-item__a" target="_blank" translate="four-next">Подробнее</a>
+                  <picture>
+                   <source type="image/webp" srcset="img/geniuspay.webp">
+                   <source type="image/jpeg" srcset="img/geniuspay.jpg">
+                   <img loading="lazy" src="img/geniuspay.jpg" alt="geniuspay">
+                  </picture>
+               </div>
+            </div>
+         </section>
+         <footer class="foo">
+            <div class="container">
+               <div class="foo__main">
+                  <div class="foo__left">
+                     <a href="#" class="foo__logo en">React Group</a>
+                     <button class="btn ru foo__btn" translate="btn">Связаться с нами</button>
+                  </div>
+                  <div class="foo__right">
+                     <div class="foo__one">
+                        <h4 class="ru foo__subtitle" translate="foo-1">Навигация</h4>
+                        <a href="#promo" class="ru foo__link" translate="promo">О Компании</a>
+                        <a href="#four" class="ru foo__link" translate="four">Направления</a>
+                        <a href="#five" class="ru foo__link" translate="five">Как работаем</a>
+                        <a href="#six" class="ru foo__link" translate="six">Вакансии</a>
+                        <div class="foo__one">
+                        </div>
+                     </div>
+                     <div class="foo__two">
+                        <h4 class="ru foo__subtitle"  translate="foo-2">Контакты</h4>
+                        <a href="tel:+79362619099" class="ru foo__link foo__phone">+7 (936) 261-90-99</a>
+                        <a href="mailto:info@reactgroup.com" class="ru foo__link foo__mail">info@reactgroup.com</a>
+                        <div class="foo__icons">
+                           <a href="https://t.me/Reactgroup_ru" class="foo__icon" target="_blank"><img loading="lazy" src="img/foo1.svg" alt=""></a>
+                           <a href="https://wa.me/79362619099" class="foo__icon" target="_blank"><img loading="lazy" src="img/foo2.svg" alt=""></a>
+                        </div>
+                        <button class="btn ru foo__btn" translate="btn">Связаться с нами</button>
+                     </div>
+                  </div>
+               </div>
+               <div class="foo__bottom">
+                  <p class="foo__descriprion ru" translate="company">© ReactGroup. Все права защищены</p>
+                  <a href="/privacy.html" class="foo__police ru" target="_blank" translate="privacy">Политика Конфиденциальности</a>
+               </div>
+            </div>
+         </footer>
+      </div>
+
+     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+      <script defer src="https://player.vimeo.com/api/player.js"></script>
+      <script defer type="text/javascript" src="js/js.js?v=1.94"></script>
+   </body>
+</html>
