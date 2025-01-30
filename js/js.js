@@ -699,8 +699,7 @@ const translateR = () => {
 
         const localStorageLanguageCode = localStorage.lang || '';
 
-        const languageCode = urlLanguageCode ? urlLanguageCode : 
-        localStorageLanguageCode ? localStorageLanguageCode : 'ru'
+        const languageCode = localStorageLanguageCode ? localStorageLanguageCode : 'ru'
 
 
         localStorage.lang = languageCode;
