@@ -1,4 +1,4 @@
 RewriteEngine On
-RewriteRule ^ru(.*)$ /Reactor/ru$1 [L]
-RewriteRule ^en(.*)$ /Reactor/en$1 [L]
-RewriteRule ^es(.*)$ /Reactor/es$1 [L]
+RewriteRule ^ru(.*)$ $1 [L]
+RewriteRule ^en(.*)$ $1 [L]
+RewriteRule ^es(.*)$ $1 [L]

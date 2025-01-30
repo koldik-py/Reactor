@@ -711,7 +711,7 @@ const translateR = () => {
     }
 
     function changeLanguage(newLanguage) {
-        window.history.pushState({}, '', '/' + newLanguage)
+        window.history.pushState({}, '', '/Reactor/' + newLanguage)
     }
 
     function getLanguageFromURL() {
